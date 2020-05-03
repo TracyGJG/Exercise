@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+
+<body>
+    <script type="module">
+        import { exercise } from './exercise.js';
+
+        exercise('Exercise Test', {
+            'testcase 1': {
+                'true === true': {
+                    expected: true,
+                    actual: true,
+                },
+                'true === false': {
+                    expected: false,
+                    actual: false,
+                },
+            },
+            'testcase 2': [],
+        });
+
+    </script>
+</body>
+
+</html>
