@@ -11,20 +11,56 @@
     <script type="module">
         import { exercise } from './exercise.js';
 
-        exercise('Exercise Test', {
-            'testcase 1': {
-                'true === true': {
-                    expected: true,
-                    actual: true,
+        function cToF(cTemp) {
+            return Math.round(((cTemp / 5) * 9) + 32);
+        }
+
+        function fToC(fTemp) {
+            return Math.round(((fTemp - 32) / 9) * 5);
+        }
+
+        exercise('Temprature Conversions', {
+            'cToF': {
+                'Freezing Point': {
+                    expected: 32,
+                    actual: cToF(0)
                 },
-                'true === false': {
-                    expected: false,
-                    actual: false,
+                'Boiling Point': {
+                    expected: 212,
+                    actual: cToF(100)
                 },
             },
-            'testcase 2': [],
+            'fToC': {
+                'Freezing Point': {
+                    expected: 0,
+                    actual: fToC(32)
+                },
+                'Boiling Point': {
+                    expected: 100,
+                    actual: fToC(212)
+                },
+            },
+            'Mid-point': {
+                'cToF': {
+                    expected: 61,
+                    actual: cToF(16)
+                },
+                'fToC': {
+                    expected: 16,
+                    actual: fToC(61)
+                },
+            },
+            'Common-point': {
+                'cToF': {
+                    expected: -40,
+                    actual: cToF(-40)
+                },
+                'fToC': {
+                    expected: -40,
+                    actual: fToC(-40)
+                },
+            }
         });
-
     </script>
 </body>
 
