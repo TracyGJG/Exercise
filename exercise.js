@@ -1,8 +1,8 @@
-export function exercise(title, testcases = {}) {
+export default function exercise(title, testcases = {}) {
+  var testsuite = 0;
+  var totalPasses = 0;
+  var totalTests = 0;
   console.log(`Exercise: ${title}\n\n`);
-  let testsuite = 0;
-  let totalPasses = 0;
-  let totalTests = 0;
 
   for (let testcase in testcases) {
     let passes = 0;
@@ -10,16 +10,16 @@ export function exercise(title, testcases = {}) {
     console.log(`%c \t${++testsuite}, ${testcase}`, 'color: #00f;');
 
     for (let test in testcases[testcase]) {
-      totalTests++;
       let result = false;
-      const testResults = testcases[testcase][test];
+      let testResults = testcases[testcase][test];
+      totalTests++;
       if (testResults.expected == testResults.actual) {
         result = true;
         passes++;
         totalPasses++;
       }
       console.log(
-        `%c \t\t${testsuite}.${++tests})\t ${test.padEnd(25)}\t ${
+        `%c \t\t${testsuite}.${++tests})\t ${test['padEnd'](25)}\t ${
           result ? 'PASS' : 'FAIL'
         }`,
         `color: ${result ? 'green' : 'red'}`
